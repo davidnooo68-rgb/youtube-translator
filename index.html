@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube双语朗读 - 看视频学英语神器</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        .card h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .feature {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .feature-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 20px 0;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        .steps {
+            counter-reset: step;
+        }
+        .step {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 20px;
+        }
+        .step::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 35px;
+            height: 35px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        .payment-section {
+            text-align: center;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+        .payment-section h2 {
+            color: white;
+        }
+        .price {
+            font-size: 3em;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .price span {
+            font-size: 0.5em;
+            opacity: 0.8;
+        }
+        .qr-placeholder {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 300px;
+        }
+        .qr-placeholder img {
+            width: 100%;
+            max-width: 200px;
+        }
+        .qr-placeholder p {
+            color: #333;
+            margin-top: 10px;
+        }
+        .free-tag {
+            display: inline-block;
+            background: #28a745;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-left: 10px;
+        }
+        .footer {
+            text-align: center;
+            color: white;
+            opacity: 0.8;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎙️ YouTube双语朗读</h1>
+            <p>看视频学英语神器 · 自动翻译 · 语音朗读</p>
+        </div>
+
+        <div class="card">
+            <h2>✨ 功能介绍</h2>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">🔄</div>
+                    <strong>自动翻译</strong>
+                    <p>实时翻译YouTube字幕</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔊</div>
+                    <strong>语音朗读</strong>
+                    <p>中英双语语音朗读</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <strong>完全免费</strong>
+                    <p>使用免费翻译API</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔒</div>
+                    <strong>无需后端</strong>
+                    <p>插件直接翻译</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>📥 下载安装 <span class="free-tag">完全免费</span></h2>
+            <p style="margin-bottom: 20px;">支持 Chrome / Edge / 360 / QQ 等所有 Chromium 浏览器</p>
+            <div style="text-align: center;">
+                <a href="YouTube双语朗读-v1.1.zip" class="download-btn" download>
+                    ⬇️ 下载插件 (v1.1)
+                </a>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <strong>下载插件</strong>
+                    <p>点击上方按钮下载 .zip 文件</p>
+                </div>
+                <div class="step">
+                    <strong>解压文件</strong>
+                    <p>将下载的 zip 解压到任意文件夹</p>
+                </div>
+                <div class="step">
+                    <strong>打开浏览器扩展管理</strong>
+                    <p>Chrome: chrome://extensions/<br>
+                       Edge: edge://extensions/</p>
+                </div>
+                <div class="step">
+                    <strong>开启开发者模式</strong>
+                    <p>右上角开关打开「开发者模式」</p>
+                </div>
+                <div class="step">
+                    <strong>加载插件</strong>
+                    <p>点击「加载已解压的扩展程序」，选择解压的文件夹</p>
+                </div>
+                <div class="step">
+                    <strong>开始使用</strong>
+                    <p>打开YouTube视频，点击插件图标开始朗读！</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card payment-section">
+            <h2>💝 支持开发者</h2>
+            <p>如果这款插件对你有帮助，欢迎打赏支持！</p>
+            <div class="price">任意金额<span>元</span></div>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <div class="qr-placeholder">
+                    <!-- 微信收款码 - 替换 wechat-qr.png 为你的微信收款码图片 -->
+                    <img src="wechat-qr.png" alt="微信收款码" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <p style="color: #999; padding: 40px; display: none;">
+                        [微信收款码]<br>请替换 wechat-qr.png
+                    </p>
+                    <p>🔴 微信支付</p>
+                </div>
+                <div class="qr-placeholder">
+                    <!-- 支付宝收款码 - 替换 alipay-qr.png 为你的支付宝收款码图片 -->
+                    <img src="alipay-qr.png" alt="支付宝收款码" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <p style="color: #999; padding: 40px; display: none;">
+                        [支付宝收款码]<br>请替换 alipay-qr.png
+                    </p>
+                    <p>🔵 支付宝</p>
+                </div>
+            </div>
+            <p style="opacity: 0.9; margin-top: 20px;">
+                你的支持是我持续更新的动力 ❤️
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>📱 使用说明</h2>
+            <ol style="line-height: 2; margin-left: 20px;">
+                <li>打开任意 YouTube 视频</li>
+                <li>确保视频有英文字幕（点击 CC 按钮开启）</li>
+                <li>点击浏览器右上角的插件图标</li>
+                <li>点击「开始朗读」按钮</li>
+                <li>插件会自动翻译并朗读字幕</li>
+                <li>可以拖拽面板调整位置，调节语速</li>
+            </ol>
+        </div>
+
+        <div class="card">
+            <h2>❓ 常见问题</h2>
+            <div style="line-height: 1.8;">
+                <p><strong>Q: 为什么翻译不准确？</strong><br>
+                A: 免费翻译API有一定限制，专业翻译请使用付费API。</p>
+                <br>
+                <p><strong>Q: 朗读没有声音？</strong><br>
+                A: 请检查浏览器是否允许播放音频，或尝试刷新页面。</p>
+                <br>
+                <p><strong>Q: 支持哪些浏览器？</strong><br>
+                A: Chrome、Edge、360浏览器、QQ浏览器、Brave等所有 Chromium 内核浏览器。</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Made with ❤️ by Davidno</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">有问题请联系：52235540@qq.com</p>
+        </div>
+    </div>
+</body>
+</html>
